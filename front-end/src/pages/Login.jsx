@@ -1,10 +1,10 @@
-import Input from "../components/common/Input";
-import styles from "./Login.module.scss";
-import Button from "../components/common/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../router/consts";
 import { useContext, useState } from "react";
-import { UserContext } from "../context/UserContext";
+import { ROUTES } from "@/router/consts";
+import Input from "@/components/common/Input";
+import Button from "@/components/common/Button";
+import { UserContext } from "@/context/UserContext";
+import styles from "./Login.module.scss";
 
 const Login = () => {
   const { login } = useContext(UserContext);

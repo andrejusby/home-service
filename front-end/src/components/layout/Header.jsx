@@ -1,11 +1,11 @@
 import { ROUTES } from "../../router/consts";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../images/logo.svg";
-import Button from "../common/Button";
-import styles from "./Header.module.scss";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "@/context/UserContext";
+import Logo from "@/images/logo.svg";
+import Button from "../common/Button";
 import Avatar from "../common/Avatar";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   const { user } = useContext(UserContext)

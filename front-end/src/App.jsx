@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./App.css";
 import { ROUTES } from "./router/consts";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -10,10 +9,12 @@ import SearchCategory from "./pages/SearchCategory";
 import RootLayout from "./components/layout/RootLayout";
 import AuthLayout from "./components/layout/AuthLayout";
 import { UserProvider } from "./context/UserContext";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: ROUTES.HOME,
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
   },
   {
     element: <AuthLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: ROUTES.LOGIN,

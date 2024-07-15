@@ -1,7 +1,6 @@
 import { categories } from "../../router/category"
-// import { categories } from "../../consts/category";
 import CategoryCard from "./CategoryCard";
-import styles from "./VerticalCategoryList.module.css";
+import styles from "./VerticalCategoryList.module.scss";
 
 const VerticalCategoryList = () => {
   return (
