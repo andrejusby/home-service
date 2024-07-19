@@ -1,4 +1,4 @@
-import { categories } from "../../router/category"
+import { categories } from "./consts";
 import CategoryCard from "./CategoryCard";
 import styles from "./VerticalCategoryList.module.scss";
 

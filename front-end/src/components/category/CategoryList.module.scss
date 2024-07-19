@@ -21,18 +21,9 @@
   color: #9977ef;
   font-weight: 500;
 
-  .name {
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    color: #9977ef;
-    font-weight: 500;
-  }
-
   &:hover {
     background-color: #f7f4fd;
     transition: 300ms;
     cursor: pointer;
   }
 }
-
-

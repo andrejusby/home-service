@@ -1,4 +1,6 @@
-export const categories = [
+import { Category } from "./types";
+
+export const categories: Category[] = [
   {
     name: "cleaning",
     color: "#b12fde",

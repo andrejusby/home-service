@@ -1,6 +1,6 @@
-import Hero from "@/components/common/Hero"
-import CategoryList from "@/components/category/CategoryList"
-import BusinessList from "@/components/business/BusinessList"
+import Hero from "../components/common/Hero"
+import CategoryList from "../components/category/CategoryList"
+import BusinessList from "../components/business/BusinessList"
 import styles from './Home.module.scss'
 
 const Home = () => {

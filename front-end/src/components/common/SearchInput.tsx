@@ -1,6 +1,8 @@
 import styles from './SearchInput.module.scss'
 
-const SearchInput = ({ ...props }) => {
+interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const SearchInput = ({ ...props }: SearchInputProps) => {
   return (
     <input className={styles.searchInput} placeholder='Search' {...props} />
   )

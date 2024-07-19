@@ -7,21 +7,14 @@
   border-radius: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
-
-  .name {
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    font-weight: 500;
-  }
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 500;
 
   &:hover,
   &.active {
     background-color: #f2eefd;
     border-color: #beaaf5;
-
-    .name {
-      // color: $primary-color;
-      color:#8056eb;
-    }
+    color: $primary-color;
   }
 }

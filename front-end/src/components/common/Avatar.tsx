@@ -1,6 +1,7 @@
+import { PropsWithChildren } from "react";
 import styles from "./Avatar.module.scss";
 
-const Avatar = ({ children }) => {
+const Avatar = ({ children }: PropsWithChildren) => {
   return <div className={styles.avatar}>{children}</div>;
 };
 

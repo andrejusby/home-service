@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { ROUTES } from "@/router/consts";
-import Input from "@/components/common/Input";
-import Button from "@/components/common/Button";
-import { UserContext } from "@/context/UserContext";
+import { useContext, useState, SyntheticEvent } from "react";
+import { ROUTES } from "../router/consts";
+import Input from "../components/common/Input";
+import Button from "../components/common/Button";
+import { UserContext } from "../context/UserContext";
 import styles from "./Login.module.scss";
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     login({ email, password });
     navigate(ROUTES.HOME);

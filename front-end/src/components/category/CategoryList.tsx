@@ -1,5 +1,5 @@
 import CategoryCard from "./CategoryCard";
-import { categories } from "../../router/category";
+import { categories } from "./consts";
 import styles from "./CategoryList.module.scss"
 
 const CategoryList = () => {
