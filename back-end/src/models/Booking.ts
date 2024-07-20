@@ -1,6 +1,15 @@
-const mongoose = require('mongoose');
+import mongoose, { Types } from 'mongoose';
 
-const bookingSchema = new mongoose.Schema({
+interface IBooking {
+  businessId: Types.ObjectId;
+  date: Date;
+  time: string;
+  userEmail: string;
+  userName: string;
+  status: 'confirmed' | 'pending' | 'cancelled';
+}
+
+const bookingSchema = new mongoose.Schema<IBooking>({
   businessId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true, // Custom error message for require field
@@ -17,10 +26,10 @@ const bookingSchema = new mongoose.Schema({
     type: String,
     required: [true, 'field is required.'], // Email is necessary for contact
     validate: {
-      validator(email) {
+      validator: function (email: string) {
         return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
       },
-      message: (props) => `${props.value} is not a valid email!`, // Custom message for invalid email
+      message: (props: { value: string }) => `${props.value} is not a valid email!`, // Custom message for invalid email
     },
   },
   userName: {
@@ -37,4 +46,6 @@ const bookingSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Booking', bookingSchema);
+const Booking = mongoose.model<IBooking>('Booking', bookingSchema);
+
+export default Booking;

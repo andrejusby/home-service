@@ -1,5 +1,5 @@
-const express = require('express');
-const Booking = require('../models/Booking');
+import express from 'express';
+import Booking from '../models/Booking';
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     await newBooking.save();
     res.status(201).json(newBooking);
   } catch (err) {
-    res.status(400).json({ message: 'Error creating booking', error: err?.message ?? err });
+    res.status(400).json({ message: 'Error creating booking', error: (err as Error)?.message ?? err });
   }
 });
 
@@ -31,4 +31,4 @@ router.get('/user/:email', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

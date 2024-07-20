@@ -1,6 +1,16 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const businessSchema = new mongoose.Schema({
+interface IBusiness {
+  name: string;
+  about: string;
+  address: string;
+  category: string;
+  contactPerson: string;
+  email: string;
+  imageUrls: string[];
+}
+
+const businessSchema = new mongoose.Schema<IBusiness>({
   name: {
     type: String,
     required: true,
@@ -25,20 +35,20 @@ const businessSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator(email) {
+      validator: function (email: string) {
         return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
       },
       message: 'Invalid email format',
     },
   },
-  images: [
+  imageUrls: [
     {
-      url: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: true,
     },
   ],
 });
 
-module.exports = mongoose.model('Business', businessSchema);
+const Business = mongoose.model<IBusiness>('Business', businessSchema);
+
+export default Business;

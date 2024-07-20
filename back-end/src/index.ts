@@ -1,15 +1,14 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import authRoutes from './routes/authRoutes';
+import categoryRoutes from './routes/categoryRoutes';
+import businessRoutes from './routes/businessRoutes';
+import bookingRoutes from './routes/bookingRoutes';
+import { connectToDb, PORT } from './db';
+
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-const authRoutes = require('./routes/authRoutes');
-const categoryRoutes = require('./routes/categoryRoutes');
-const businessRoutes = require('./routes/bookingRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
-
-const { connectToDb, PORT } = require('./db');
 
 app.use('/auth', authRoutes);
 app.use('/categories', categoryRoutes);
