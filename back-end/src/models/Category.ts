@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 interface ICategory {
   name: string;
   color: string;
-  icon: string;
+  url: string;
 }
 
 const categorySchema = new mongoose.Schema<ICategory>({
@@ -15,11 +15,9 @@ const categorySchema = new mongoose.Schema<ICategory>({
     type: String,
     default: '#000000',
   },
-  icon: {
-    url: {
-      type: String,
-      default: 'https://img.icons8.com/?size=100&id=6644&format=png&color=000000',
-    },
+  url: {
+    type: String,
+    default: 'https://img.icons8.com/?size=100&id=6644&format=png&color=000000',
   },
 });
 
