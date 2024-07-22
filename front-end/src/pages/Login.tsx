@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState, SyntheticEvent } from "react";
+import { AxiosError } from "axios";
 import { ROUTES } from "../router/consts";
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
@@ -11,6 +12,7 @@ const Login = () => {
   const { login } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState('')
   const navigate = useNavigate();
 
   const handleSubmit = async (event: SyntheticEvent) => {
@@ -20,7 +22,9 @@ const Login = () => {
       login(response);
       navigate(ROUTES.HOME);
     } catch (err) {
-      console.error(err);
+      const errorMessage = err as AxiosError<{ message: string }>
+      console.error(errorMessage);
+      setError(errorMessage.response?.data.message ?? '')
     }
   };
   return (
@@ -43,6 +47,7 @@ const Login = () => {
           required
           className={styles.input}
         />
+        {error && <p className={styles.error}>{error}</p>}
         <Button type="submit">Log in</Button>
         <div className={styles.link}>
           <Link to={ROUTES.REGISTER} className={styles.signUp}>

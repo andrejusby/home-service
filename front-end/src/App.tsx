@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
 import { ROUTES } from "./router/consts";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -57,7 +58,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <UserProvider>
-      <RouterProvider router={router} />
+      <SnackbarProvider>
+        <RouterProvider router={router} />
+      </SnackbarProvider>
     </UserProvider>
   );
 }

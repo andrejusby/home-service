@@ -14,3 +14,7 @@ export interface LoginResponse {
   token: string;
   user: User;
 }
+
+export interface RegisterRequest extends LoginRequest {
+  name: string
+}

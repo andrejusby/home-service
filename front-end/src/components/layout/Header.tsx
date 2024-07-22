@@ -42,7 +42,7 @@ const Header = () => {
       </div>
       <div className={styles.rightSide}>
         {user ? (
-          <Avatar>{user.name}</Avatar>
+          <Avatar>{user.name[0]}</Avatar>
         ) : (
           <Button onClick={() => navigate(ROUTES.LOGIN)}>
             Login / Sign Up
