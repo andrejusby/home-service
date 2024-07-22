@@ -1,17 +1,16 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { Category } from "./types";
+import { fetchCategories } from "./api";
 import styles from "./VerticalCategoryList.module.scss";
 
 const VerticalCategoryList = () => {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/categories")
+    fetchCategories()
       .then((response) => {
-        setCategories(response.data);
+        setCategories(response);
       })
       .catch((err) => {
         console.error(err);

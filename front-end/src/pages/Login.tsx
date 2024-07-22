@@ -4,6 +4,7 @@ import { ROUTES } from "../router/consts";
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
 import { UserContext } from "../context/UserContext";
+import { loginUser } from "../components/user/api";
 import styles from "./Login.module.scss";
 
 const Login = () => {
@@ -12,10 +13,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event: SyntheticEvent) => {
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    login({ email, password });
-    navigate(ROUTES.HOME);
+    try {
+      const response = await loginUser({ email, password });
+      login(response);
+      navigate(ROUTES.HOME);
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <div className={styles.container}>
