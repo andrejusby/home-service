@@ -6,6 +6,8 @@
     background-color 100ms ease-in;
   border: 2px solid #dee1e2;
   color: rgb(14, 14, 16);
+  display: block;
+  width: 100%;
 
   display: block;
 
@@ -17,4 +19,10 @@
     border-color: #9147ff;
     background: #fff;
   }
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 0.5rem;
 }
