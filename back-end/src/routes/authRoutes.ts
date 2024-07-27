@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Incorrect email or password' });
     }
 
-    const token = generateToken(user._id);
+    const token = generateToken({ id: user._id});
 
     const userWithoutPassword = await User.findById(user._id).select('-password');
 
