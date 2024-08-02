@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../common/Button";
 import { Business } from "./types";
 import styles from "./BusinessCard.module.scss";
@@ -21,7 +22,9 @@ const BusinessCard = ({ business }: BusinessCardProps) => {
         <h3 className={styles.name}>{business.name}</h3>
         <p className={styles.contactPerson}>{business.contactPerson}</p>
         <p className={styles.address}>{business.address}</p>
-        <Button>Book now</Button>
+        <Link to={`/business/${business._id}`}>
+          <Button>Book now</Button>
+        </Link>
       </div>
     </div>
   );

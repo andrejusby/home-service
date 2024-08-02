@@ -1,0 +1,75 @@
+// main
+
+.container {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 75% calc(25% - 50px);
+  column-gap: 50px;
+}
+
+.description {
+  h2 {
+    margin: 1rem 0 1rem 0;
+    font-size: 1.4rem;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  img {
+    width: 150px;
+    height: 100px;
+    border-radius: 9px;
+  }
+}
+
+// aside
+
+.bookAppointment {
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+}
+
+// similar business
+
+.item {
+  width: 100%;
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 1rem;
+
+  img {
+    object-fit: cover;
+    width: 6.25rem;
+
+    height: 6.56rem;
+    border-radius: 0.4rem;
+  }
+}
+
+.sbTitle {
+  margin: 1rem 0 1rem 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  p:nth-child(2) {
+    color: $primary-color;
+  }
+
+  p:nth-child(3) {
+    color: grey;
+  }
+}
+
+
+

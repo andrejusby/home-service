@@ -8,4 +8,5 @@ export const ROUTES = {
   MY_ACCOUNT: "/account",
   MY_BOOKING: "/booking",
   LOGOUT: "/logout",
+  BUSINESS: '/business/:id'
 };

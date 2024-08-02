@@ -1,13 +1,10 @@
-import React, { PropsWithChildren, useState, useRef, useEffect } from "react";
+import { PropsWithChildren, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/consts";
 import styles from "./Avatar.module.scss";
 
-interface AvatarProps {
-  children: React.ReactNode;
-}
 
-const Avatar = ({ children }: AvatarProps) => {
+const Avatar = ({ children }: PropsWithChildren) => {
   const [isDropDownOpen, setDropDownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();

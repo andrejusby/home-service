@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+// left side
+
+.leftSide {
+  display: flex;
+}
+
+.description {
+  margin-left: 1rem;
+}
+
+.circularImage {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  .circularImage img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.5rem 0.7rem;
+  border-radius: 30px;
+  background-color: #e5ddfb;
+  color: $primary-color;
+  font-weight: 400;
+  font-size: 0.7rem;
+  text-transform: capitalize;
+}
+
+.name {
+  margin: 1rem 0 1.1rem 0;
+  font-size: 2.2rem;
+}
+
+.info {
+  display: flex;
+  color: grey;
+  padding-bottom: 15px;
+  font-size: 1.3rem;
+
+  svg {
+    margin-right: 5px;
+  }
+}
+
+// right side
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.exportIcon {
+  background-color: $primary-color;
+  height: 2.2rem;
+  width: 2.9rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+  color: #ffff;
+}
+
+.contactPerson {
+  display: flex;
+  color: $primary-color;
+  font-size: 1.1rem;
+  margin: 1rem 0 1rem;
+
+  p {
+    margin: 2px 0 0 0.3rem;
+    font-size: 450;
+  }
+}
+
+.time {
+  display: flex;
+  color: grey;
+
+  p {
+    margin: 2px 0 0 0.3rem;
+    font-weight: 450;
+  }
+}
+

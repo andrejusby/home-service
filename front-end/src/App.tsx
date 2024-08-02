@@ -9,6 +9,7 @@ import SearchCategory from "./pages/SearchCategory";
 import ErrorPage from "./pages/ErrorPage";
 import Services from "./pages/Services";
 import Register from "./pages/Register";
+import BusinessPage from "./pages/BusinessPage";
 import RootLayout from "./components/layout/RootLayout";
 import AuthLayout from "./components/layout/AuthLayout";
 import { UserProvider } from "./context/UserContext";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: ROUTES.SEARCH_CATEGORY,
         element: <SearchCategory />,
       },
+      {
+        path: ROUTES.BUSINESS,
+        element: <BusinessPage />
+      }
     ],
   },
   {
