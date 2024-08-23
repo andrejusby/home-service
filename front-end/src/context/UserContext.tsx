@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext } from "react";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useLocalStorage } from "usehooks-ts";
 import { LoginResponse, User } from "../components/user/types";
 
 const UserContext = createContext<{
@@ -21,6 +21,7 @@ const UserProvider = ({ children }: PropsWithChildren) => {
   const isLoggedIn = !!user;
 
   const login = (loginResponse: LoginResponse) => {
+    console.log(loginResponse);
     setUser(loginResponse.user);
     setToken(loginResponse.token);
   };

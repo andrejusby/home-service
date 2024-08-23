@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AxiosError } from "axios";
 import { Form, Formik } from "formik";
 import { ROUTES } from "../../router/consts";
 import Button from "../common/Button";
@@ -24,7 +23,7 @@ const LoginForm = () => {
       login(response);
       navigate(ROUTES.HOME);
     } catch (err) {
-      const errorMessage = err as ErrorResponse
+      const errorMessage = err as ErrorResponse;
       console.error(errorMessage);
       setError(errorMessage.response?.data.message ?? "");
     }
