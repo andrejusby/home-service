@@ -51,7 +51,7 @@ const MainSection = ({ business }: MainSectionProps) => {
       </article>
 
       <aside>
-        <Modal />
+        <Modal business={business}/>
 
         <article>
           <h2 className={styles.sbTitle}>Similar business</h2>

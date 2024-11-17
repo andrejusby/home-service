@@ -7,11 +7,15 @@ interface IBooking {
   userEmail: string;
   userName: string;
   status: 'confirmed' | 'pending' | 'cancelled';
+
 }
 
 const bookingSchema = new mongoose.Schema<IBooking>({
   businessId: {
     type: mongoose.Schema.Types.ObjectId,
+
+    ref: 'Business', // Nuoroda
+
     required: true, // Custom error message for require field
   },
   date: {
@@ -43,7 +47,7 @@ const bookingSchema = new mongoose.Schema<IBooking>({
       values: ['confirmed', 'pending', 'cancelled'],
       message: '{VALUE} is not supported', // Custom message if an unsupported value is provided
     },
-  },
+  }, 
 });
 
 const Booking = mongoose.model<IBooking>('Booking', bookingSchema);

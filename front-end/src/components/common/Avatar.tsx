@@ -1,6 +1,7 @@
-import { PropsWithChildren, useState, useRef, useEffect } from "react";
+import { PropsWithChildren, useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/consts";
+import { UserContext } from "../../context/UserContext";
 import styles from "./Avatar.module.scss";
 
 
@@ -8,6 +9,7 @@ const Avatar = ({ children }: PropsWithChildren) => {
   const [isDropDownOpen, setDropDownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const { logout } = useContext(UserContext); // Pasiimame logout funkcija is userContext
 
   const handleToggleDropDown = () => {
     setDropDownOpen(!isDropDownOpen);
@@ -28,6 +30,8 @@ const Avatar = ({ children }: PropsWithChildren) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  
 
   return (
     <div
@@ -52,7 +56,7 @@ const Avatar = ({ children }: PropsWithChildren) => {
           </div>
           <div
             className={styles.dropdownItem}
-            onClick={() => navigate(ROUTES.LOGOUT)}
+            onClick={logout} // Pridedame logout funkcija
           >
             Logout
           </div>

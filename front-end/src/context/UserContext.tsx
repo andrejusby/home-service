@@ -21,7 +21,6 @@ const UserProvider = ({ children }: PropsWithChildren) => {
   const isLoggedIn = !!user;
 
   const login = (loginResponse: LoginResponse) => {
-    console.log(loginResponse);
     setUser(loginResponse.user);
     setToken(loginResponse.token);
   };

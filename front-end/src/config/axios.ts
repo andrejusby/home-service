@@ -15,6 +15,8 @@ axiosInstance.interceptors.request.use(
     if (token) {
       const parsedToken = JSON.parse(token);
       config.headers.Authorization = `Bearer ${parsedToken}`;
+      console.log('Authorization Header:', config.headers.Authorization); // Pridetas spasdinimas
+      
     }
     return config;
   },

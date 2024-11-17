@@ -10,6 +10,8 @@ import ErrorPage from "./pages/ErrorPage";
 import Services from "./pages/Services";
 import Register from "./pages/Register";
 import BusinessPage from "./pages/BusinessPage";
+import MyBookings from "./pages/Bookings";
+import MyAccount from "./pages/MyAccount";
 import RootLayout from "./components/layout/RootLayout";
 import AuthLayout from "./components/layout/AuthLayout";
 import { UserProvider } from "./context/UserContext";
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: ROUTES.BUSINESS,
         element: <BusinessPage />
+      },
+      {
+        path: ROUTES.MY_BOOKING,
+        element: <MyBookings />
+      },
+      {
+        path: ROUTES.MY_ACCOUNT,
+        element: <MyAccount />
       }
     ],
   },

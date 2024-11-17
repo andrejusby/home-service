@@ -1,0 +1,65 @@
+.card {
+  display: flex;
+  border: 3px solid #f7f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(86, 20, 208, 0.25) 5px 5px 15px;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+}
+
+.imagesSection {
+  flex: 0 0 30%; /* Užimti 30% tėvinio elemento pločio */
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Išlaikyti proporcijas ir užpildyti tėvinį elementą */
+  border-radius: 8px;
+}
+
+.infoSection {
+  flex: 1; /* Užimti likusią kortelės dalį */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+
+h3 {
+    padding-bottom: 8px;
+}
+
+  svg {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+}
+
+.infoItem > div {
+  margin-left: 8px;
+}

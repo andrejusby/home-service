@@ -1,9 +1,13 @@
 import { CiSearch } from "react-icons/ci";
 import Button from "./Button";
 import SearchInput from "./SearchInput";
-import styles from './Hero.module.scss'
+import styles from "./Hero.module.scss";
 
-const Hero = () => {
+interface HeroProps {
+  onSearchChange: (value: string) => void; //Paieskos funkcija is rekvizitu
+}
+
+const Hero = ({ onSearchChange }: HeroProps) => {
   return (
     <div className={styles.hero}>
       <h1 className={styles.title}>
@@ -11,9 +15,11 @@ const Hero = () => {
         <br />
         Near You
       </h1>
-      <p className={styles.subtitle}>Explore Best Home service & Repair near you</p>
+      <p className={styles.subtitle}>
+        Explore Best Home service & Repair near you
+      </p>
       <div className={styles.searchContainer}>
-        <SearchInput />
+        <SearchInput onChange={(e) => onSearchChange(e.target.value)} /> 
         <Button rounded>
           <div>
             <CiSearch fontSize={24} />
@@ -25,5 +31,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

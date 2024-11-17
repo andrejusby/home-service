@@ -4,6 +4,7 @@ import authRoutes from './routes/authRoutes';
 import categoryRoutes from './routes/categoryRoutes';
 import businessRoutes from './routes/businessRoutes';
 import bookingRoutes from './routes/bookingRoutes';
+import userRoutes from './routes/userRoutes'
 import { connectToDb, PORT } from './db';
 
 const app = express();
@@ -14,6 +15,7 @@ app.use('/auth', authRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/businesses', businessRoutes);
 app.use('/bookings', bookingRoutes);
+app.use('/user', userRoutes);
 
 connectToDb()
   .then(() => {

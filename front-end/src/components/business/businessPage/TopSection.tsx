@@ -1,6 +1,6 @@
 import styles from './TopSection.module.scss'
-import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
+import { IoLocationOutline } from "react-icons/io5";
 import { PiExport } from "react-icons/pi";
 import { IoPersonOutline } from "react-icons/io5";
 import { LuClock4 } from "react-icons/lu";
