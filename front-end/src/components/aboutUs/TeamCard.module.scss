@@ -1,0 +1,28 @@
+.teamMember {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(86, 20, 208, 0.25) 5px 5px 15px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: #666;
+    font-size: 0.95em;
+  }
+}

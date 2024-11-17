@@ -1,0 +1,32 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team {
+  margin-bottom: 60px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .heroImage,
+  .historyImage {
+    max-width: 100%;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
