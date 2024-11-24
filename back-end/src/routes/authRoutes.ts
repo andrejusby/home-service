@@ -32,11 +32,17 @@ router.post('/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: 'Incorrect email or password' });
     }
+    
+    // if (!(await user.isCorrectPassword(password))) {
+    //   return res.status(401).json({ message: 'Incorrect email or password' });
+    // }
 
-    if (!(await user.isCorrectPassword(password))) {
-      return res.status(401).json({ message: 'Incorrect email or password' });
+    const isMatch = await user.isCorrectPassword(password)
+    console.log('Pasword match during login:', isMatch);
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Incorrect email or password'})
     }
-
+    
     // const token = generateToken({ id: user._id });
 
     const token = generateToken({ id: user._id, email: user.email})

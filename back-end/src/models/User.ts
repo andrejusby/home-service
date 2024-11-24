@@ -30,9 +30,9 @@ userSchema.pre<IUser>('save', async function (next) {
   next();
 });
 
-userSchema.methods.isCorrectPassword = function (password: string) {
-  return bcrypt.compare(password, this.password);
-};
+userSchema.methods.isCorrectPassword = async function (password: string) {
+  return bcrypt.compare(password, this.password)
+}
 
 const User = mongoose.model<IUser>('User', userSchema);
 
