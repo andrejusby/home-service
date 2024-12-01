@@ -8,7 +8,7 @@ interface BusinessListProps {
   categoryName?: Category["name"];
   className?: string;
   searchText?: string;
-  limit?: number; // Naujas rekvizitas limiitui nustatyti
+  limit?: number; 
 }
 
 const BusinessList = ({
@@ -20,7 +20,6 @@ const BusinessList = ({
   const { data } = useBusinesses();
   const businesses = data ?? [];
 
-  // Filtruojame verslus pagal kategorija ir paieskos teksta
   const filteredBusiness = businesses.filter((business) => {
     const matchesCategory = categoryName
       ? business.category === categoryName
@@ -34,7 +33,6 @@ const BusinessList = ({
     return matchesCategory && matchesSearch;
   });
 
-  // Taikome limita jei jis yra nustatytas
   const limitedBusiness = limit ? filteredBusiness.slice(0, limit) : filteredBusiness;
 
   return (
