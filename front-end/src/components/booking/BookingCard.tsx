@@ -3,7 +3,16 @@ import { IoPersonOutline, IoLocationOutline } from "react-icons/io5";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { LuClock4 } from "react-icons/lu";
 
-const BookingCard = ({ booking }: { booking: any }) => {
+const BookingCard = ({
+  booking,
+  isCompact,
+  showImage = true,
+}: {
+  booking: any;
+
+  isCompact?: boolean;
+  showImage?: boolean;
+}) => {
   if (!booking) {
     return <p>No booking data available</p>;
   }
@@ -12,19 +21,17 @@ const BookingCard = ({ booking }: { booking: any }) => {
   const { date, time } = booking;
 
   return (
-    <div className={styles.card}>
+    <div className={isCompact ? styles.compactCard : styles.card}>
       <div className={styles.cardWrapper}>
-        <div className={styles.imagesSection}>
-          {business.imageUrls && business.imageUrls.length > 0 ? (
+        {showImage && (
+          <div className={styles.imagesSection}>
             <img
               src={business.imageUrls[0]}
-              alt="image"
+              alt={business.name || "Booking"}
               className={styles.img}
             />
-          ) : (
-            <p>No image available</p>
-          )}
-        </div>
+          </div>
+        )}
         <div className={styles.infoSection}>
           <h3>{business.name || "Unknown Service"}</h3>
 
@@ -42,7 +49,9 @@ const BookingCard = ({ booking }: { booking: any }) => {
             <MdOutlineCalendarToday />
             <div>
               service on:{" "}
-              <span>{date ? new Date(date).toLocaleDateString() : "Unknown date"}</span>
+              <span>
+                {date ? new Date(date).toLocaleDateString() : "Unknown date"}
+              </span>
             </div>
           </div>
 

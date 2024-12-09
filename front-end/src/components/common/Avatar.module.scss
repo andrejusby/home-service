@@ -11,6 +11,11 @@
   text-transform: capitalize;
   cursor: pointer;
   position: relative;
+
+  &.notActive {
+    cursor: default;
+    
+  }
 }
 
 .dropdown {

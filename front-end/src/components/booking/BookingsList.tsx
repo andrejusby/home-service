@@ -3,7 +3,7 @@ import BookingCard from "./BookingCard";
 import { useBookings } from "./hooks";
 import styles from "./BookingsList.module.scss";
 
-const BookingsList = () => {
+const BookingsList = ({ displayMode = 'default'}: {displayMode?: string}) => {
   const { data } = useBookings();
   const bookings = data ?? [];
 
@@ -18,9 +18,11 @@ const BookingsList = () => {
     return true;
   });
 
+  const isCompact = displayMode === 'compact';
+
   return (
     <>
-      <h1>My Bookings</h1>
+      {!isCompact && <h1>My Bookings</h1>}
       <section className={styles.header}>
         <button
           className={`${styles.whiteButton} ${
@@ -40,12 +42,12 @@ const BookingsList = () => {
           Completed
         </button>
       </section>
-      <article className={styles.cardContainer}>
+      <article className={isCompact ? styles.compactCardContainer : styles.cardContainer}>
         {filteredBookings.length === 0 ? (
           <p>No bookings found</p>
         ) : (
-          filteredBookings.map((booking, index) => (
-            <BookingCard key={index} booking={booking} />
+          filteredBookings.map((booking) => (
+            <BookingCard key={booking.userEmail} booking={booking} isCompact={isCompact} showImage={!isCompact}/>
           ))
         )}
       </article>

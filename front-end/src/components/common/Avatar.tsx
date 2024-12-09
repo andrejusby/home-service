@@ -1,18 +1,29 @@
-import { PropsWithChildren, useState, useRef, useEffect, useContext } from "react";
+import {
+  PropsWithChildren,
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/consts";
 import { UserContext } from "../../context/UserContext";
 import styles from "./Avatar.module.scss";
 
+interface AvatarProps extends PropsWithChildren {
+  isDropdownActive?: boolean;
+}
 
-const Avatar = ({ children }: PropsWithChildren) => {
+const Avatar = ({ children, isDropdownActive = true }: AvatarProps) => {
   const [isDropDownOpen, setDropDownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-  const { logout } = useContext(UserContext); // Pasiimame logout funkcija is userContext
+  const { logout, user } = useContext(UserContext);
 
   const handleToggleDropDown = () => {
-    setDropDownOpen(!isDropDownOpen);
+    if (isDropdownActive) {
+      setDropDownOpen(!isDropDownOpen);
+    }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -25,22 +36,30 @@ const Avatar = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    if (isDropdownActive) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isDropdownActive]);
 
-  
+  if (!user) {
+    return null;
+  }
+
+  const userInitial = user.name ? user.name[0].toUpperCase() : ''
 
   return (
     <div
-      className={styles.avatar}
+      className={`${styles.avatar} ${
+        !isDropdownActive ? styles.notActive : ""
+      }`}
       onClick={handleToggleDropDown}
       ref={dropdownRef}
     >
-      {children}
-      {isDropDownOpen && (
+      {children || userInitial}
+      {isDropdownActive && isDropDownOpen && (
         <div className={styles.dropdown}>
           <div
             className={styles.dropdownItem}
@@ -54,10 +73,7 @@ const Avatar = ({ children }: PropsWithChildren) => {
           >
             My Booking
           </div>
-          <div
-            className={styles.dropdownItem}
-            onClick={logout} // Pridedame logout funkcija
-          >
+          <div className={styles.dropdownItem} onClick={logout}>
             Logout
           </div>
         </div>

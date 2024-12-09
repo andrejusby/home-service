@@ -13,6 +13,17 @@
   }
 }
 
+.compactCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
 .cardWrapper {
   display: flex;
   width: 100%;
@@ -63,3 +74,4 @@ h3 {
 .infoItem > div {
   margin-left: 8px;
 }
+

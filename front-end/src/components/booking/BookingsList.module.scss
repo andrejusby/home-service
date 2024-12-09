@@ -36,3 +36,15 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
+
+.compactCardContainer {
+  margin-top: 0.5rem;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 0.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
