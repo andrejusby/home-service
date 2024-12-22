@@ -15,7 +15,6 @@ const MyAccount = () => {
       </section>
 
       <section className={styles.section}>
-        <h2>Change Password</h2>
         <ChangePasswordForm />
       </section>
 

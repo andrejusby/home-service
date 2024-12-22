@@ -31,6 +31,8 @@ const ChangePasswordForm = () => {
   };
 
   return (
+    <>
+    <h2 className={styles.title}>Change Password</h2>
     <Formik
       initialValues={passwordInitialValues}
       validationSchema={passwordValidationSchema}
@@ -44,6 +46,7 @@ const ChangePasswordForm = () => {
               type="password"
               name="oldPassword"
               placeholder="Enter current password"
+              className={styles.input}
             />
           </div>
 
@@ -53,15 +56,17 @@ const ChangePasswordForm = () => {
               type="password"
               name="newPassword"
               placeholder="Enter new password"
+              className={styles.input}
             />
           </div>
 
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting} className={styles.button}>
             {isSubmitting ? "Updating..." : "Update Password"}
           </Button>
         </Form>
       )}
     </Formik>
+    </>
   );
 };
 
