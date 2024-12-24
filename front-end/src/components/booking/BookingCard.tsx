@@ -1,14 +1,15 @@
-import styles from "./BookingCard.module.scss";
 import { IoPersonOutline, IoLocationOutline } from "react-icons/io5";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { LuClock4 } from "react-icons/lu";
+import { Bookings } from "./types";
+import styles from "./BookingCard.module.scss";
 
 const BookingCard = ({
   booking,
   isCompact,
   showImage = true,
 }: {
-  booking: any;
+  booking: Bookings;
 
   isCompact?: boolean;
   showImage?: boolean;

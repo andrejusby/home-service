@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useBusinesses } from "../components/business/hooks";
 import styles from "./BusinessPage.module.scss";
-import TopSection from "../components/business/businessPage/TopSection";
-import MainSection from "../components/business/businessPage/MainSection";
-import Button from "../components/common/Button";
-import Modal from "../components/common/Modal";
+import TopSection from "../components/businessAppointment/TopSection";
+import MainSection from "../components/businessAppointment/MainSection";
 
 const BusinessPage = () => {
   const { id } = useParams<{ id: string }>();

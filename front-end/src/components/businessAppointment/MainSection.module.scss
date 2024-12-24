@@ -1,0 +1,19 @@
+.container {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 75% calc(25% - 50px);
+  column-gap: 50px;
+}
+
+.description {
+  h2 {
+    margin: 1rem 0 1rem 0;
+    font-size: 1.4rem;
+  }
+}
+
+.bookAppointment {
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+}

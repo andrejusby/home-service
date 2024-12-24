@@ -1,0 +1,34 @@
+.item {
+  width: 100%;
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 1rem;
+
+  img {
+    object-fit: cover;
+    width: 6.25rem;
+
+    height: 6.56rem;
+    border-radius: 0.4rem;
+  }
+}
+
+.sbTitle {
+  margin: 1rem 0 1rem 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  p:nth-child(2) {
+    color: $primary-color;
+  }
+
+  p:nth-child(3) {
+    color: grey;
+  }
+}
