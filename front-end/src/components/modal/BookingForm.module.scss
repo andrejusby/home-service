@@ -1,0 +1,62 @@
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  label {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.modalTitle {
+    color: grey;
+    font-weight: 600;
+    margin: 25px 0 1.5rem 0;
+}
+
+/// slots
+.slotContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.slot {
+  padding: 8px 14px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  color: grey;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+}
+
+.selectedSlot {
+  background-color: $primary-color;
+  color: #fff;
+  font-weight: bold;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

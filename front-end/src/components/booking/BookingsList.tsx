@@ -47,7 +47,7 @@ const BookingsList = ({ displayMode = 'default'}: {displayMode?: string}) => {
           <p>No bookings found</p>
         ) : (
           filteredBookings.map((booking) => (
-            <BookingCard key={booking.userEmail} booking={booking} isCompact={isCompact} showImage={!isCompact}/>
+            <BookingCard key={booking.date} booking={booking} isCompact={isCompact} showImage={!isCompact}/>
           ))
         )}
       </article>
