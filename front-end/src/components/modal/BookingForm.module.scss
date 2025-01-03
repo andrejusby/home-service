@@ -3,7 +3,8 @@
   flex-direction: column;
   flex-grow: 1;
   overflow-y: auto;
-
+  width: 100%;
+  
   label {
     margin-bottom: 10px;
     display: flex;
@@ -32,15 +33,20 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  justify-content: flex-start; 
+  
 }
 
 .slot {
   padding: 8px 14px;
   border-radius: 15px;
-  border: 1px solid grey;
-  color: grey;
+  border: 1px solid rgb(216, 214, 214);
+  color: rgb(145, 143, 143);
+  font-weight: bolder;
   background-color: #fff;
   cursor: pointer;
+  width: 30%;
+  margin-right: 6px;
 
   &:hover {
     background-color: $primary-color;
@@ -60,3 +66,5 @@
   justify-content: center;
   gap: 5px;
 }
+
+

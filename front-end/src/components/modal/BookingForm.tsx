@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/consts";
 import axiosInstance from "../../config/axios";
 import Button from "../common/Button";
-import Calendar from "react-calendar";
+// import Calendar from "react-calendar";
+import MaterialUiCalendar from "./MaterialUiCalendar";
 import { ModalBookingForm, BookingValues } from "./types";
 import "react-calendar/dist/Calendar.css";
 import styles from "./BookingForm.module.scss";
@@ -62,12 +63,12 @@ const BookingForm = ({ business, onClose }: ModalBookingForm) => {
     >
       {({ setFieldValue, values, isSubmitting }) => (
         <Form className={styles.modalForm}>
-          <Calendar
-            // onChange={(date: Date) => {
-            //   setFieldValue("date", date);
-            //   fetchTimeSlots(date);
-            //   setFieldValue("time", "");
-            // }}
+          {/* <Calendar
+            onChange={(date: Date) => {
+              setFieldValue("date", date);
+              fetchTimeSlots(date);
+              setFieldValue("time", "");
+            }}
             onChange={(value, event) => {
               if (value instanceof Date) {
                 setFieldValue("date", value);
@@ -79,6 +80,17 @@ const BookingForm = ({ business, onClose }: ModalBookingForm) => {
             }}
             value={values.date}
             className={styles.calendar}
+          /> */}
+
+          <MaterialUiCalendar
+            value={values.date}
+            onChange={(newValue) => {
+              if (newValue) {
+                setFieldValue("date", newValue);
+                fetchTimeSlots(newValue);
+                setFieldValue("time", "");
+              }
+            }}
           />
 
           <label className={styles.modalTitle}>Select Time Slot</label>
@@ -98,7 +110,6 @@ const BookingForm = ({ business, onClose }: ModalBookingForm) => {
               </button>
             ))}
           </div>
-
           <Button
             type="submit"
             disabled={isSubmitting || !values.date || !values.time}
