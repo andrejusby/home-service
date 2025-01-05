@@ -6,9 +6,21 @@
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: rgba(86, 20, 208, 0.25) 5px 5px 15px;
+  }
+
+
+  @media (max-width: 768px) {
+    height: auto; 
+    width: 100%; 
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; 
+    max-width: 300px; 
   }
 }
 
@@ -18,6 +30,16 @@
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+
+  @media (max-width: 1216px) {
+   
+    
+    
+  }
+
+  @media (max-width: 768px) {
+    height: 200px; 
+  }
 }
 
 .infoContainer {
