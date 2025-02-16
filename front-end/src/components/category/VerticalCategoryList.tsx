@@ -1,4 +1,5 @@
 import CategoryCard from "./CategoryCard";
+import MobileCategoryList from "./MobileCategoryList";
 import { useCategories } from "./hooks";
 import styles from "./VerticalCategoryList.module.scss";
 
@@ -8,9 +9,12 @@ const VerticalCategoryList = () => {
   return (
     <div>
       <h2 className={styles.title}>Categories</h2>
-      {categories?.map((category) => (
-        <CategoryCard key={category.name} category={category} />
-      ))}
+      <MobileCategoryList />
+      <div className={styles.categoryList}>
+        {categories?.map((category) => (
+          <CategoryCard key={category.name} category={category} />
+        ))}
+      </div>
     </div>
   );
 };

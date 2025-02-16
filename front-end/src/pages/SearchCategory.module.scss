@@ -1,10 +1,21 @@
 .container {
-  display: flex;
+  // display: flex;
   gap: 2rem;
+
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  align-items: flex-start;
+
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .categories {
-  width: 30%;
+  // width: 30%;
+
+  width: 100%;
 }
 
 .title {
@@ -13,10 +24,22 @@
   margin-bottom: 2rem;
 }
 
+.categories,
 .categoryContainer {
-  width: 70%;
+  // width: 70%;
+  width: 100%;
 }
 
 .businessList {
   grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 1162px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 817px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  
 }
