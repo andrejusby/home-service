@@ -11,6 +11,11 @@
     height: 6.56rem;
     border-radius: 0.4rem;
   }
+
+  @media (max-width: 533px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .sbTitle {

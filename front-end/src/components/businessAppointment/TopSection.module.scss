@@ -1,16 +1,37 @@
 .container {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 857px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 // left side
 
 .leftSide {
   display: flex;
+
+  @media (max-width: 857px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    > div:first-child {
+      margin-bottom: 1.5rem;
+    }
+  }
 }
 
 .description {
   margin-left: 1rem;
+
+  @media (max-width: 857px) {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .circularImage {
@@ -24,6 +45,11 @@
     width: 100%;
     height: auto;
   }
+
+  @media (max-width: 1040px) {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .chip {
@@ -35,11 +61,19 @@
   font-weight: 400;
   font-size: 0.7rem;
   text-transform: capitalize;
+
+  @media (max-width: 1040px) {
+    font-size: 0.5rem;
+  }
 }
 
 .name {
   margin: 1rem 0 1.1rem 0;
   font-size: 2.2rem;
+
+  @media (max-width: 1040px) {
+    font-size: 1.8rem;
+  }
 }
 
 .info {
@@ -51,6 +85,15 @@
   svg {
     margin-right: 5px;
   }
+
+  @media (max-width: 1040px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 857px) {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 // right side
@@ -59,6 +102,11 @@
   display: flex;
   flex-direction: column;
   align-items: end;
+
+  @media (max-width: 857px) {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .exportIcon {
@@ -91,4 +139,3 @@
     font-weight: 450;
   }
 }
-
