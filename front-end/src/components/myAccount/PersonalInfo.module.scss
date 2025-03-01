@@ -1,19 +1,17 @@
 .personalInfoContainer {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Atstumas tarp avataro ir informacijos */
+  display: flex;
+  align-items: center;
+  gap: 20px;
   padding: 20px;
 }
-
 
 .infoContent {
   display: flex;
   align-items: center;
-  gap: 20px; /* Atstumas tarp avataro ir informacijos */
+  gap: 20px;
 }
-
 .avatarSection {
-  flex-shrink: 0; /* Užtikrina, kad avataras nesusitrauks */
+  flex-shrink: 0;
 }
 
 .infoSection {
@@ -35,5 +33,8 @@
     strong {
       color: #000;
     }
+  }
+  @media (max-width: 529px) {
+    font-size: 13px;
   }
 }
